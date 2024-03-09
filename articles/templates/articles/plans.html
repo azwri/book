@@ -1,0 +1,38 @@
+{% extends "base/index.html" %}
+
+{% block content %}
+
+<h1>Plans</h1>
+
+<h4>{{ user}}</h4>
+{% if user.subscription.is_active %}
+  <h4>{{ user.subscription.plan}}</h4>
+{% else %}
+<h4>None</h4>
+{% endif %}
+
+<div id="paypal-button-container-P-5R321363MN217040EMXVKWVI"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AYpEf3oWcg5OUqbhTtOuhMnmkSTMiB6eoErJJsIHHQ86sPhVoxrj1GZRJYv1f0l9JjtAEuSYRZzmDRn5&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'white',
+          layout: 'vertical',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-5R321363MN217040EMXVKWVI'
+        });
+      },
+      onApprove: function(data, actions) {
+        // alert(data.subscriptionID); // You can add optional success message for the subscriber here
+        var current_url = '/subscribe/' + data.subscriptionID + '/monthly/';
+        window.open(current_url, '_self');
+      }
+  }).render('#paypal-button-container-P-5R321363MN217040EMXVKWVI'); // Renders the PayPal button
+</script>
+
+{% endblock %}

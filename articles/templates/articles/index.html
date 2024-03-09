@@ -1,0 +1,169 @@
+{% extends "base/index.html" %}
+{% load static %}
+
+
+{% block content %}
+    
+<div id="theme-banner-one">
+    <div class="illustration wow zoomIn animated" data-wow-delay="1s" data-wow-duration="2s">
+        <img src="{% static 'base/images/shape/banner-shape1111.svg' %}" alt="">
+        <!-- <img src="{% static 'base/images/shape/banner-shape2.svg' %}" alt="" class="shape-one wow fadeInDown animated" data-wow-delay="1.8s"> -->
+        <!-- <img src="{% static 'base/images/shape/banner-shape3.svg' %}" alt="" class="shape-two wow fadeInUp animated" data-wow-delay="2.7s"> -->
+    </div>
+    <img src="{% static 'base/images/shape/oval-1.svg' %}" alt="" class="oval-one">
+    <img src="{% static 'base/images/shape/shape-1.svg' %}" alt="" class="shape-three">
+    <img src="{% static 'base/images/shape/shape-55.svg' %}" alt="" class="shape-four">
+    <img src="{% static 'base/images/shape/shape-56.svg' %}" alt="" class="shape-five">
+    <img src="{% static 'base/images/shape/shape-57.svg' %}" alt="" class="shape-six">
+    <img src="{% static 'base/images/shape/shape-58.svg' %}" alt="" class="shape-seven">
+    <img src="{% static 'base/images/shape/shape-59.svg' %}" alt="" class="shape-eight">
+    <img src="{% static 'base/images/shape/shape-60.svg' %}" alt="" class="shape-nine">
+    <img src="{% static 'base/images/shape/shape-61.svg' %}" alt="" class="shape-ten">
+    <img src="{% static 'base/images/shape/shape-62.svg' %}" alt="" class="shape-eleven">
+    <div class="container">
+        <div class="main-wrapper">
+            <div class="slogan wow fadeInDown animated" data-wow-delay="0.2s"><span>ارفع مبيعاتك</span> من خلال محتوى متخصص في <span>المبيعات</span></span></div>
+            <h1 class="main-title wow fadeInUp animated" data-wow-delay="0.4s">طور نفسك 🚀</h1>
+            <p class="sub-title wow fadeInUp animated" data-wow-delay="0.9s">
+                 لا يمكن لموظفي المبيعات تحقيق اهدافهم 
+                 <br />
+                 بدون تطوير وتحسين معرفتهم عن عالم المبيعات.
+            <ul class="button-group lightgallery">
+                <li><a href="#sub" class="more-button solid-button-one wow fadeInRight animated" data-wow-delay="1.5s">طور نفسك الان!</a></li>
+            </ul>
+        </div> <!-- /.main-wrapper -->
+    </div> <!-- /.container -->
+    <span id="sub"></span>
+</div> 
+
+
+
+<div class="agn-counter-section" >
+    <div class="container">
+        <div class="main-wrapper d-flex justify-content-center">
+            <div class="theme-title-one text-center">
+                <h3 class="" style="color: #E85146;">اشترك الان مقابل ٩ ريال فقط </h3>
+                <br />
+                <div id="paypal-button-container-P-5R321363MN217040EMXVKWVI" class="d-flex justify-content-center border-0"></div>
+            </div> <!-- /.theme-title-one -->
+        </div> <!-- /.main-wrapper -->
+
+        
+<script src="https://www.paypal.com/sdk/js?client-id=AYpEf3oWcg5OUqbhTtOuhMnmkSTMiB6eoErJJsIHHQ86sPhVoxrj1GZRJYv1f0l9JjtAEuSYRZzmDRn5&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'white',
+          layout: 'vertical',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-5R321363MN217040EMXVKWVI'
+        });
+      },
+      onApprove: function(data, actions) {
+        // alert(data.subscriptionID); // You can add optional success message for the subscriber here
+        var current_url = '/subscribe/' + data.subscriptionID + '/monthly/';
+        window.open(current_url, '_self');
+      }
+  }).render('#paypal-button-container-P-5R321363MN217040EMXVKWVI'); // Renders the PayPal button
+</script>
+           
+    </div> <!-- /.container -->
+</div> <!-- /.agn-counter-section -->
+
+
+
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 order-lg-last">
+                <div class="text-wrapper">
+                    <div class="theme-title-one">
+                        <div class="upper-title"></div>
+                        <h4 class="">
+                            في تسعة
+                        </h4>
+                    </div> <!-- /.theme-title-one -->
+                    <p> 
+                        نسعى لتطوير الموظفين بتزويدهم بملخصات لابرز الكتب العلمية والحياتية. ليصلك المُلخص في تمام الساعه ٩ صباحًا وتقرأه في ٩ دقائق! 
+                        <br />
+                        طور نفسك مع تسعة وكن نجم ساطع في بيئة عملك 💫</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.agn-about-us -->
+
+
+
+
+<div class="agn-what-we-do pt-150 pb-200 mt-5">
+    <img src="images/shape/shape-63.svg" alt="" class="shape-one" data-aos="fade-right">
+    <img src="images/shape/shape-56.svg" alt="" class="shape-two">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-block">
+                    <div class="icon">
+                        <img src="{% static 'base/images/shape/shape-2.svg' %}" alt="" class="bg">
+                        <img src="{% static 'base/images/icon/icon1.svg' %}" alt="" class="shape" data-aos="zoom-in-down">
+                    </div>
+                    <h5 class="title">لا مزيد من التطبيقات</h5>
+                    <p>يصلك المحتوى بشكل شخصي على واتساب وعلى ايميلك بشكل اسيوعي </p>
+                </div> <!-- /.single-block -->
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="single-block">
+                    <div class="icon">
+                        <img src="{% static 'base/images/shape/shape-2.svg' %}" alt="" class="bg">
+                        <img src="{% static 'base/images/icon/icon2.svg' %}" alt="" class="shape" data-aos="zoom-in-down">
+                    </div>
+                    <h5 class="title">تطوير ذاتي</h5>
+                    <p>
+                        يفتح آفاقاً جديدة، يحسن المهارات الشخصية والمهنية، ويدعم تحقيق الأهداف
+                    </p>
+                </div> <!-- /.single-block -->
+            </div>
+
+            <div class="col-lg-4 co-12 d-md-none d-lg-block">
+                <div class="single-block">
+                    <div class="icon">
+                        <img src="{% static 'base/images/shape/shape-2.svg' %}" alt="" class="bg">
+                        <img src="{% static 'base/images/icon/icon3.svg' %}" alt="" class="shape" data-aos="zoom-in-down">
+                    </div>
+                    <h5 class="title">محتوى متخصص</h5>
+                    <p>يعزز العلاقات مع العملاء، يزيد فهم احتياجاتهم، ويحسن فرص تحقيق الاهداف البيعية</p>
+                </div> <!-- /.single-block -->
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> 
+
+
+
+<div class="element-section mb-150 pt-90" style="background: #fff;" dir="rtl">
+    <footer class="theme-footer-three" data-aos="fade-up">
+        <div class="container">
+            <div class="logo"><a href="index.html"><img src="{% static 'base/images/logo/logo3.png' %}" alt=""></a></div>
+            <p><a href="#" class="email">info@ts9h.com</a></p>
+            <p><a href="#" class="phone">0557914399</a></p>
+            <ul class="social-icon">
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+            </ul>
+            <p class="copy-right">&copy;  حميع الحقوق محفوظة</p>
+        </div>
+    </footer> <!-- /.theme-footer-three -->
+</div>
+
+
+
+
+{% endblock %}

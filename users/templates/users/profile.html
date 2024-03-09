@@ -1,0 +1,22 @@
+{% extends "base/index.html" %}
+
+
+{% block content %}
+    <!-- Element Style -->
+			<div class="element-section mb-150">
+
+				<div class="solid-inner-banner">
+					<h3 class="page-title">اهلا {{ user.full_name }} 👋🏻</h3>
+                    {% if user.subscription.is_active %}
+                        <p>
+                            اشتراكك هو الاشتراك المميز 🥇 
+                        </p>
+                    {% else %}
+                        <p>
+                            ليس لديك اشتراك ! 
+                            <a class="nav-link" href="{% url 'articles:index' %}">اشترك الان</a>
+                        </p>
+                    {% endif %}
+				</div> <!-- /.solid-inner-banner -->
+			</div>
+{% endblock %}
